@@ -1,0 +1,18 @@
+# Raw data (download instructions are in the README)
+data/raw/
+*.csv.gz
+*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Large model files (remove this line if you want to commit the model)
+# models/*.joblib
