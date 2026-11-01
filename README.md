@@ -633,7 +633,7 @@ ORDER BY unsold_tracks DESC;
 ### Case File 06: The Briefing Room
 > **Status: page 1 built, pages 2–4 planned.** The *Market Pulse* page is finished and saved in `dashboard/`. The remaining pages below are the plan for the next iteration.
 
-![Market Pulse dashboard](dashboard/screenshots/market_pulse.png)
+![Market Pulse](dashboard/screenshots/market_pulse.png)
 
 **What page 1 contains (as built):** five KPI cards (457 listings · $144 median price · 4.74 average rating · 47% Superhosts · 261 average days available), a scatter of listings by longitude and latitude sized by median price, a bar chart of listings by room type, and slicers for room type and ward. Everything cross-filters.
 
