@@ -59,8 +59,9 @@ Predicting log nightly price. 365 training rows, 92 test rows, 5-fold cross-vali
 - **Most surprising SQL finding:** monthly revenue is almost perfectly flat (about 37.6 in each of the first 12 months), a sign that Chinook is a teaching sample rather than real trading data. The unsold-track counts are also dominated by the biggest catalogues (Rock 552, Latin 239), so a share-based measure would be fairer.
 
 ## Case 06: The Briefing Room
-- **Dashboard link or screenshots:** `[add once built]`
-- **Three decisions this dashboard could support:** `[add once built]`
+- **Dashboard link or screenshots:** `dashboard/airbnb_dashboard.pbix` and `dashboard/screenshots/market_pulse.png`. Page 1 (Market Pulse) is built; pages 2–4 are planned.
+- **Headline numbers on the page:** 457 listings, median price $144, average rating 4.74, 47% Superhosts, average availability 261 days. Most listings are entire homes, and there is only one shared room.
+- **Three decisions this dashboard could support:** (1) a host comparing their nightly price with the ward and room-type median; (2) a city planner spotting which wards have the densest short-term-rental supply; (3) a prospective host choosing between listing an entire home or a private room, based on how the market splits.
 
 ---
 
@@ -74,4 +75,4 @@ Predicting log nightly price. 365 training rows, 92 test rows, 5-fold cross-vali
 - Three host columns are empty in this city's file, so host tenure and instant-booking could not be used.
 - One shared-room listing, so room-type comparisons cover entire homes and private rooms only.
 - Prices are asking prices from a single snapshot, so seasonality and actual booked prices are not captured.
-- Next: repeat the analysis on a larger city to test whether the findings hold, tune the models, and build the BI dashboard (Case 06).
+- Next: repeat the analysis on a larger city to test whether the findings hold, tune the models, and build dashboard pages 2–4 (What Drives Price, Host and Quality, Model Lens).

@@ -102,8 +102,8 @@ data-science-tool-mastery/
 │   └── chinook_queries.sql        ← all SQL, version-controlled
 │
 ├── dashboard/
-│   ├── airbnb_dashboard.pbix      ← (or .twbx / screenshots)
-│   └── screenshots/
+│   ├── airbnb_dashboard.pbix      ← Power BI file (open in Power BI Desktop)
+│   └── screenshots/market_pulse.png
 │
 ├── reports/
 │   ├── figures/                   ← exported charts
@@ -523,7 +523,7 @@ print(ranking.head(10).round(4))
 joblib.dump(best, "../models/price_model.joblib")
 ```
 
-> **Honesty box (to fill in):** where the model fails (luxury listings? sparse neighbourhoods?), what data it can't see (photos, host description, season), and why it should be used as a *guide*, not a price-setting oracle.
+> **Honesty box:** the model fails most on the priciest 20% of listings (mean error about $98 per night vs about $15 for the cheapest 20%). The test set is only 92 listings, so the scores are indicative, not precise. It cannot see photos, descriptions or season, so it should be used as a *guide* for sanity-checking a price, not a price-setting oracle.
 
 ---
 
@@ -631,6 +631,14 @@ ORDER BY unsold_tracks DESC;
 ---
 
 ### Case File 06: The Briefing Room
+> **Status: page 1 built, pages 2–4 planned.** The *Market Pulse* page is finished and saved in `dashboard/`. The remaining pages below are the plan for the next iteration.
+
+![Market Pulse dashboard](dashboard/screenshots/market_pulse.png)
+
+**What page 1 contains (as built):** five KPI cards (457 listings · $144 median price · 4.74 average rating · 47% Superhosts · 261 average days available), a scatter of listings by longitude and latitude sized by median price, a bar chart of listings by room type, and slicers for room type and ward. Everything cross-filters.
+
+**One honest note:** I first built this as a map visual, but Power BI ships with map visuals disabled and it kept reverting on my machine, so I used a longitude/latitude scatter, which shows the same spatial pattern without needing map tiles.
+
 **Objective 6 · Business Intelligence dashboard and portfolio packaging**
 
 **The case:** *Decision-makers won't open a Jupyter notebook. Can I turn the Airbnb analysis into something a city planner or a host could explore in two minutes?*
@@ -727,7 +735,7 @@ This is the half of Objective 6 that people forget. I'll finish by writing `repo
 
 **Case 05: SQL.** In the Chinook store the USA is the top revenue country (about 523 from 13 customers) and Rock is 35.5% of revenue. Monthly revenue is almost flat, which suggests a teaching sample, so I did not draw seasonal conclusions.
 
-**Case 06: dashboard.** *(To add: link or screenshots from `dashboard/screenshots/`.)*
+**Case 06: dashboard.** Page 1 (Market Pulse) is built in Power BI: five KPI cards, a listings scatter, a room-type bar chart and ward/room-type slicers. Pages 2–4 are planned, not built.
 
 **Recommendations:** price by guest capacity first; treat Superhost status as worth pursuing but not proven causal; don't over-weight location in a compact market.
 
