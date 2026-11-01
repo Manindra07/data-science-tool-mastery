@@ -23,7 +23,7 @@
 7. [Visualization Guide](#7-visualization-guide-what-to-build-what-it-should-say)
 8. [Results and Insights](#8-results-and-insights)
 9. [Reflection: Skills Demonstrated](#9-reflection-skills-demonstrated)
-10. [Contact](#11-contact)
+10. [Contact](#10-contact)
 
 ---
 
@@ -102,7 +102,7 @@ data-science-tool-mastery/
 │
 ├── dashboard/
 │   ├── airbnb_dashboard.pbix      ← Power BI file (open in Power BI Desktop)
-│   └── screenshots/market_pulse.png
+│   └── screenshots/                ← Market_Pulse.png, what_drives_price.png
 │
 ├── reports/
 │   ├── figures/                   ← exported charts
@@ -118,7 +118,7 @@ data-science-tool-mastery/
 
 ```bash
 # 1. Clone and enter the project
-git clone https://github.com/<Manindra07>/data-science-tool-mastery.git
+git clone https://github.com/Manindra07/data-science-tool-mastery.git
 cd data-science-tool-mastery
 
 # 2. Create an environment
@@ -630,11 +630,15 @@ ORDER BY unsold_tracks DESC;
 ---
 
 ### Case File 06: The Briefing Room
-> **Status: page 1 built, pages 2–4 planned.** The *Market Pulse* page is finished and saved in `dashboard/`. The remaining pages below are the plan for the next iteration.
+> **Status: pages 1–2 built, pages 3–4 planned.** The *Market Pulse* and *What Drives Price* pages are finished and saved in `dashboard/`. The remaining pages below are the plan for the next iteration.
 
-![Market Pulse Dashboard](dashboard/screenshots/Market_Pulse.png)
+![Market Pulse dashboard](dashboard/screenshots/Market_Pulse.png)
 
 **What page 1 contains (as built):** five KPI cards (457 listings · $144 median price · 4.74 average rating · 47% Superhosts · 261 average days available), a scatter of listings by longitude and latitude sized by median price, a bar chart of listings by room type, and slicers for room type and ward. Everything cross-filters.
+
+![What Drives Price dashboard](dashboard/screenshots/what_drives_price.png)
+
+**What page 2 contains (as built):** median price by ward (sorted, with listing counts on hover), a scatter of distance from the centre against price for all 457 listings, median price by room type (the single shared-room listing is excluded and the chart title says so; 327 entire homes and 129 private rooms remain), a decomposition tree that splits median price by guest capacity and then by room type, and a one-line takeaway. In the tree, median price climbs from about $64 for 1 guest to $118 for 2, $160 for 4 and $195 for 5. Inside the 4-guest group, private rooms ($181) come out above entire homes ($160), which looks odd and probably reflects very few private-room listings of that size, so I treat it as noise rather than a finding. The takeaway is deliberately cautious: price rises with guest capacity, but the priciest capacity groups contain very few listings, and distance from the centre shows no clear pattern.
 
 **One honest note:** I first built this as a map visual, but Power BI ships with map visuals disabled and it kept reverting on my machine, so I used a longitude/latitude scatter, which shows the same spatial pattern without needing map tiles.
 
@@ -653,12 +657,12 @@ ORDER BY unsold_tracks DESC;
 - Bar chart: listings by room type
 - Slicers: Ward · Room type (price band and Superhost slicers planned)
 
-**Page 2: What Drives Price**
-- Median price by neighbourhood (sorted bar)
+**Page 2: What Drives Price** *(built)*
+- Median price by ward (sorted bar)
 - Scatter: distance from centre vs price
-- Box plot or distribution by room type
-- Decomposition tree: price broken down by room type → neighbourhood → capacity
-- *Insight callout (text box):* one sentence summarising what the chart says
+- Median price by room type (a box plot was planned; Power BI has no native one, so I used a bar chart)
+- Decomposition tree: median price by guest capacity, then room type, ward and property type
+- *Insight callout (text box):* one sentence summarising what the page says
 
 **Page 3: Host and Quality View**
 - Superhost vs non-superhost: price, rating, review count
@@ -734,7 +738,7 @@ This is the half of Objective 6 that people forget. I'll finish by writing `repo
 
 **Case 05: SQL.** In the Chinook store the USA is the top revenue country (about 523 from 13 customers) and Rock is 35.5% of revenue. Monthly revenue is almost flat, which suggests a teaching sample, so I did not draw seasonal conclusions.
 
-**Case 06: dashboard.** Page 1 (Market Pulse) is built in Power BI: five KPI cards, a listings scatter, a room-type bar chart and ward/room-type slicers. Pages 2–4 are planned, not built.
+**Case 06: dashboard.** Pages 1–2 are built in Power BI. Market Pulse has five KPI cards, a listings scatter, a room-type bar chart and ward/room-type slicers. What Drives Price has median price by ward, distance vs price, price by room type and a decomposition tree. Pages 3–4 are planned, not built.
 
 **Recommendations:** price by guest capacity first; treat Superhost status as worth pursuing but not proven causal; don't over-weight location in a compact market.
 

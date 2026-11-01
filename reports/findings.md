@@ -59,8 +59,9 @@ Predicting log nightly price. 365 training rows, 92 test rows, 5-fold cross-vali
 - **Most surprising SQL finding:** monthly revenue is almost perfectly flat (about 37.6 in each of the first 12 months), a sign that Chinook is a teaching sample rather than real trading data. The unsold-track counts are also dominated by the biggest catalogues (Rock 552, Latin 239), so a share-based measure would be fairer.
 
 ## Case 06: The Briefing Room
-- **Dashboard link or screenshots:** `dashboard/airbnb_dashboard.pbix` and `dashboard/screenshots/market_pulse.png`. Page 1 (Market Pulse) is built; pages 2–4 are planned.
-- **Headline numbers on the page:** 457 listings, median price $144, average rating 4.74, 47% Superhosts, average availability 261 days. Most listings are entire homes, and there is only one shared room.
+- **Dashboard link or screenshots:** `dashboard/airbnb_dashboard.pbix` and `dashboard/screenshots/Market_Pulse.png` and `dashboard/screenshots/what_drives_price.png`. Pages 1–2 (Market Pulse and What Drives Price) are built; pages 3–4 are planned.
+- **Headline numbers on the page:** 457 listings, median price $144, average rating 4.74, 47% Superhosts, average availability 261 days. Of the 457 listings, 327 are entire homes, 129 are private rooms and 1 is a shared room.
+- **What page 2 shows:** median price rises with guest capacity, but the priciest capacity groups have very few listings, so their medians are fragile. Distance from the centre shows no clear pattern in the scatter, consistent with the weak Spearman result in Case 02. The shared-room listing is excluded from the room-type chart for that reason. In the decomposition tree, median price climbs from about $64 (1 guest) to $118 (2), $160 (4) and $195 (5); within 4-guest listings private rooms ($181) sit above entire homes ($160), which I read as small-sample noise, not a pattern.
 - **Three decisions this dashboard could support:** (1) a host comparing their nightly price with the ward and room-type median; (2) a city planner spotting which wards have the densest short-term-rental supply; (3) a prospective host choosing between listing an entire home or a private room, based on how the market splits.
 
 ---
@@ -75,4 +76,4 @@ Predicting log nightly price. 365 training rows, 92 test rows, 5-fold cross-vali
 - Three host columns are empty in this city's file, so host tenure and instant-booking could not be used.
 - One shared-room listing, so room-type comparisons cover entire homes and private rooms only.
 - Prices are asking prices from a single snapshot, so seasonality and actual booked prices are not captured.
-- Next: repeat the analysis on a larger city to test whether the findings hold, tune the models, and build dashboard pages 2–4 (What Drives Price, Host and Quality, Model Lens).
+- Next: repeat the analysis on a larger city to test whether the findings hold, tune the models, and build dashboard pages 3–4 (Host and Quality, Model Lens).
