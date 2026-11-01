@@ -23,8 +23,7 @@
 7. [Visualization Guide](#7-visualization-guide-what-to-build-what-it-should-say)
 8. [Results and Insights](#8-results-and-insights)
 9. [Reflection: Skills Demonstrated](#9-reflection-skills-demonstrated)
-10. [Publishing Checklist](#10-publishing-checklist)
-11. [Contact](#11-contact)
+10. [Contact](#11-contact)
 
 ---
 
@@ -119,7 +118,7 @@ data-science-tool-mastery/
 
 ```bash
 # 1. Clone and enter the project
-git clone https://github.com/<your-username>/data-science-tool-mastery.git
+git clone https://github.com/<Manindra07>/data-science-tool-mastery.git
 cd data-science-tool-mastery
 
 # 2. Create an environment
@@ -650,9 +649,9 @@ ORDER BY unsold_tracks DESC;
 
 **Page 1: Market Pulse (overview)**
 - **KPI cards:** Total listings · Median nightly price · Average rating · Superhost share · Average availability
-- Map of listings coloured by median price
+- Scatter of listings by longitude and latitude, sized by median price (a map visual was planned)
 - Bar chart: listings by room type
-- Slicers: Neighbourhood · Room type · Price band · Superhost (yes/no)
+- Slicers: Ward · Room type (price band and Superhost slicers planned)
 
 **Page 2: What Drives Price**
 - Median price by neighbourhood (sorted bar)
@@ -764,23 +763,7 @@ Looking back, the biggest shift wasn't learning any single library. It was learn
 
 ---
 
-## 10. Publishing Checklist
-
-- [ ] Notebooks run top-to-bottom on a fresh kernel (`Kernel → Restart & Run All`)
-- [ ] No absolute file paths, API keys or personal data in any file
-- [ ] Raw data excluded via `.gitignore`; download instructions are in the README
-- [ ] Data licences credited (Inside Airbnb, Our World in Data, Chinook)
-- [ ] Figures exported to `reports/figures/` and embedded in `findings.md`
-- [ ] Dashboard screenshots added (and a short GIF or video if possible)
-- [ ] Repo topics added: `data-science`, `python`, `pandas`, `scikit-learn`, `sql`, `power-bi`, `eda`
-- [ ] Pinned on GitHub and added to LinkedIn → Featured
-
-**A LinkedIn post to adapt:**
-> I just wrapped up my fourth internship project: the **Data Science Tool Mastery Project**, six "case files" that take real public data from messy CSV to a predictive model and an interactive dashboard. Python, SQL, Scikit-learn and Power BI, all documented on GitHub. The biggest lesson: write down *why* you made each decision, not just what you did. Repo and write-up below 👇
-
----
-
-## 11. Contact
+## 10. Contact
 
 <div align="center">
 
